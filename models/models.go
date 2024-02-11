@@ -19,7 +19,7 @@ type User struct {
 	Updated_At      time.Time          `json:"updtaed_at"`
 	User_ID         string             `json:"user_id"`
 	UserCart        []ProductUser      `json:"usercart" bson:"usercart"`
-	Address_Details []Address          `json:"address" bson:"address"`
+	Address_Details []Address          `json:"address" bson:"address"`   // user can have multiple addresses
 	Order_Status    []Order            `json:"orders" bson:"orders"`
 }
 
