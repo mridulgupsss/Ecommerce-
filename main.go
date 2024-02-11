@@ -19,10 +19,11 @@ func main() {
 	}
 	app := controllers.NewApplication(database.ProductData(database.Client, "Products"), database.UserData(database.Client, "Users"))
 
-	router := gin.New()
-	router.Use(gin.Logger())
+	router := gin.New()  // returns new router 
+	router.Use(gin.Logger()) // middleware
 
-	routes.UserRoutes(router)
+	routes.UserRoutes(router) 
+	
 	router.Use(middleware.Authentication())
 	
 	router.GET("/addtocart", app.AddToCart())
